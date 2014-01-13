@@ -62,5 +62,13 @@ public class MusicCollectionPlayer implements Playback,Control {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public ArrayList<Collection> getCollection() {
+		return collection;
+	}
+
+	public void setCollection(ArrayList<Collection> collection) {
+		this.collection = collection;
+	}
 	
 }

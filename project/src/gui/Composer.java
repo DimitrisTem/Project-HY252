@@ -1,14 +1,24 @@
 package gui;
 import java.awt.*;
+
 import javax.swing.*;
+
 import java.awt.event.*;
+
 import javax.swing.plaf.metal.*;
 
 public class Composer extends JFrame{
 	public Composer(){
-		super("composer");
+		/*Windows conf*/
+		super("Composer");
+		JPanel panel=new JPanel();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLookAndFeel();
+		setVisible(true);
+		/****************
+		 **MENU OPTIONS**
+		 ****************/
 		JMenuItem j1 = new JMenuItem("Open");
 		JMenuItem j2 = new JMenuItem("New");
 		JMenuItem j3 = new JMenuItem("Save");
@@ -45,11 +55,50 @@ public class Composer extends JFrame{
 		JScrollPane scroll = new JScrollPane();
 		BorderLayout bord = new BorderLayout();
 		setLayout(bord);
-		add("Center",scroll);
+		
+	//	add("Center",scroll);
 		setJMenuBar(menubar);
+		
+		/***********
+		 **JAPANEL**
+		 **********/
+		
+	/*	JPanel jPanel = new JPanel();
+		jPanel.setLayout(null);
+		ImageIcon icon = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg");
+		JLabel label = new JLabel(icon);
+		jPanel.add(label);
+		super.add(jPanel);
+		GridLayout grid = new GridLayout(3,1);
+		add(jPanel);
+		setVisible(true);    
+		*/
+		
+		/*********
+		 **icons**
+		 *********/
+		
+		ImageIcon Play = new ImageIcon("Resources/playbut.jpg");
+		ImageIcon Stop = new ImageIcon("Resources/stopbut.jpg");
+		
+		
+		/**************************
+		 **Play/stop icon buttons**
+		 **************************/
+		
+		JButton play = new JButton("",Play);
+		JButton stop = new JButton("",Stop);
+		play.setLocation(40, 400);
+		play.setLocation(5,5);
+		panel.add(play,BorderLayout.EAST);
+		//panel.add(stop);
+		add(panel);
 		pack();
-		setVisible(true);
+		
+		
 	}
+	
+	
 	
 	private void setLookAndFeel(){
 		try{

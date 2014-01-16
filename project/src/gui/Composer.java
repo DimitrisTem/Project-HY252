@@ -52,27 +52,158 @@ public class Composer extends JFrame{
 		menu3.add(j11);
 		menubar.add(menu3);
 		
-		JScrollPane scroll = new JScrollPane();
-		BorderLayout bord = new BorderLayout();
-		setLayout(bord);
-		
-	//	add("Center",scroll);
 		setJMenuBar(menubar);
+	
+		/******************
+		 **Grid for notes**
+		 ******************/
+		GridLayout grid = new GridLayout(1,12);
 		
+		setLayout(grid);
 		/***********
 		 **JAPANEL**
 		 **********/
 		
-	/*	JPanel jPanel = new JPanel();
-		jPanel.setLayout(null);
-		ImageIcon icon = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg");
-		JLabel label = new JLabel(icon);
-		jPanel.add(label);
-		super.add(jPanel);
-		GridLayout grid = new GridLayout(3,1);
-		add(jPanel);
+		/********************
+		 **JPanel for notes**
+		 ********************/
+		JPanel noteC = new JPanel();
+		JPanel noteCC = new JPanel();
+		JPanel noteD = new JPanel();
+		JPanel noteDD = new JPanel();
+		JPanel noteE = new JPanel();
+		JPanel noteF = new JPanel();
+		JPanel noteFF = new JPanel();
+		JPanel noteG = new JPanel();
+		JPanel noteGG = new JPanel();
+		JPanel noteA = new JPanel();
+		JPanel noteAA = new JPanel();
+		JPanel noteB = new JPanel();
+		//panel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		/*********************************
+		 **set background color to white** 
+		 *********************************/
+		
+		
+		noteC.setLayout(new BorderLayout());
+		noteC.setBackground(Color.white);
+		
+		noteCC.setLayout(new BorderLayout());
+		noteCC.setBackground(Color.white);
+		
+		noteD.setLayout(new BorderLayout());
+		noteD.setBackground(Color.white);
+		
+		noteDD.setLayout(new BorderLayout());
+		noteDD.setBackground(Color.white);
+		
+		noteE.setLayout(new BorderLayout());
+		noteE.setBackground(Color.white);
+		
+		noteF.setLayout(new BorderLayout());
+		noteF.setBackground(Color.white);
+		
+		noteFF.setLayout(new BorderLayout());
+		noteFF.setBackground(Color.white);
+		
+		noteG.setLayout(new BorderLayout());
+		noteG.setBackground(Color.white);
+		
+		noteGG.setLayout(new BorderLayout());
+		noteGG.setBackground(Color.white);
+		
+		noteAA.setLayout(new BorderLayout());
+		noteAA.setBackground(Color.white);
+		
+		noteA.setLayout(new BorderLayout());
+		noteA.setBackground(Color.white);
+		
+		noteB.setLayout(new BorderLayout());
+		noteB.setBackground(Color.white);
+		
+		
+		/*************************
+		 **Image icons for notes**
+		 *************************/
+		ImageIcon iconc = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC.jpg");
+		JLabel labelNotec = new JLabel(iconc);
+		
+		ImageIcon iconcc = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#.jpg");
+		JLabel labelNotecc = new JLabel(iconcc);
+		
+		ImageIcon icond = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD.jpg");
+		JLabel labelNoted = new JLabel(icond);
+		
+		ImageIcon icondd = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#.jpg");
+		JLabel labelNotedd = new JLabel(icondd);
+		
+		ImageIcon icone = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteE.jpg");
+		JLabel labelNotee = new JLabel(icone);
+		
+		ImageIcon iconf = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF.jpg");
+		JLabel labelNotef = new JLabel(iconf);
+		
+		ImageIcon iconff = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#.jpg");
+		JLabel labelNoteff = new JLabel(iconff);
+		
+		ImageIcon icong = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG.jpg");
+		JLabel labelNoteg = new JLabel(icong);
+		
+		ImageIcon icongg = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#.jpg");
+		JLabel labelNotegg = new JLabel(icongg);
+		
+		ImageIcon icona = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg");
+		JLabel labelNotea = new JLabel(icona);
+		
+		ImageIcon iconaa = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#.jpg");
+		JLabel labelNoteaa = new JLabel(iconaa);
+		
+		ImageIcon iconb = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteB.jpg");
+		JLabel labelNoteb = new JLabel(iconb);
+		
+		
+		
+		
+		
+		/******************************
+		 **insert icon label to notes**
+		 ******************************/
+		
+		noteC.add(labelNotec);
+	    noteCC.add(labelNotecc);
+		noteD.add(labelNoted);
+		noteDD.add(labelNotedd);
+		noteE.add(labelNotee);
+		noteF.add(labelNotef);
+		noteFF.add(labelNoteff);
+		noteG.add(labelNoteg);
+		noteGG.add(labelNotegg);
+		noteA.add(labelNotea);
+		noteAA.add(labelNoteaa);
+		noteB.add(labelNoteb);
+		
+		
+		/*********************************
+		 **insert notes at correct order**
+		 *********************************/
+		
+		
+		this.add(noteC);
+		this.add(noteCC);
+		this.add(noteD);
+		this.add(noteDD);
+		this.add(noteE);
+		this.add(noteF);
+		this.add(noteFF);
+		this.add(noteG);
+		this.add(noteGG);
+		this.add(noteA);
+		this.add(noteAA);
+		this.add(noteB);
+		
+		
 		setVisible(true);    
-		*/
+		
 		
 		/*********
 		 **icons**
@@ -86,7 +217,7 @@ public class Composer extends JFrame{
 		 **Play/stop icon buttons**
 		 **************************/
 		
-		JButton play = new JButton("",Play);
+		/*JButton play = new JButton("",Play);
 		JButton stop = new JButton("",Stop);
 		play.setLocation(40, 400);
 		play.setLocation(5,5);
@@ -94,7 +225,7 @@ public class Composer extends JFrame{
 		//panel.add(stop);
 		add(panel);
 		pack();
-		
+		*/
 		
 	}
 	
@@ -113,7 +244,7 @@ public class Composer extends JFrame{
 	
 	public static void main(String[] args){
 		Composer comp = new Composer();
-		comp.setBounds(50,50,800,500);
+		comp.setBounds(100,50,800,600);
 	}
 	
 }

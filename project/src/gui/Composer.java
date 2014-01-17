@@ -53,16 +53,131 @@ public class Composer extends JFrame{
 		menubar.add(menu3);
 		
 		setJMenuBar(menubar);
+		
+
+		/*********
+		 **icons**
+		 *********/
+	
+		ImageIcon Play = new ImageIcon("Resources/playbut.jpg");
+		ImageIcon Stop = new ImageIcon("Resources/stopbut.jpg");
+		
 	
 		/******************
 		 **Grid for notes**
 		 ******************/
-		GridLayout grid = new GridLayout(1,12);
+		GridLayout grid = new GridLayout(2,12);
 		
 		setLayout(grid);
+		
 		/***********
 		 **JAPANEL**
 		 **********/
+		
+		/*************************
+		 **JPanel white for grid**
+		 *************************/
+		
+		JPanel white = new JPanel();
+		JPanel white1 = new JPanel();
+		JPanel white2 = new JPanel();
+		JPanel white3 = new JPanel();
+		JPanel white4 = new JPanel();
+		JPanel white5 = new JPanel();
+		JPanel white6 = new JPanel();
+		JPanel white7 = new JPanel();
+		JPanel white8 = new JPanel();
+		JPanel white9 = new JPanel();
+		JPanel white10 = new JPanel();
+		JPanel white11 = new JPanel();
+		
+		
+		/*************************************************
+		 **Set background color to white for white panel**
+		 *************************************************/
+		white.setLayout(new BorderLayout());
+		white.setBackground(Color.white);
+		
+		white1.setLayout(new BorderLayout());
+		white1.setBackground(Color.white);
+
+		white2.setLayout(new BorderLayout());
+		white2.setBackground(Color.white);
+		
+		white3.setLayout(new BorderLayout());
+		white3.setBackground(Color.white);
+		
+		white4.setLayout(new BorderLayout());
+		white4.setBackground(Color.white);
+
+		white5.setLayout(new BorderLayout());
+		white5.setBackground(Color.white);
+		
+		white6.setLayout(new BorderLayout());
+		white6.setBackground(Color.white);
+
+		white7.setLayout(new BorderLayout());
+		white7.setBackground(Color.white);
+
+		white8.setLayout(new BorderLayout());
+		white8.setBackground(Color.white);
+		
+		white9.setLayout(new BorderLayout());
+		white9.setBackground(Color.white);
+		
+		white10.setLayout(new BorderLayout());
+		white10.setBackground(Color.white);
+		
+		white11.setLayout(new BorderLayout());
+		white11.setBackground(Color.white);
+		/*******************************
+		 **Image icons for white panel**
+		 *******************************/
+		
+		ImageIcon WHITE = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/white.jpg");
+		JLabel White = new JLabel(WHITE);
+	
+		/************************************
+		 **insert icon label to white panel**
+		 ************************************/
+		white.add(White);
+		white1.add(White);
+		white2.add(White);
+		white3.add(White);
+		white4.add(White);
+		white5.add(White);
+		white6.add(White);
+		white7.add(White);
+		white8.add(White);
+		white9.add(White);
+		white10.add(White);
+		white11.add(White);
+		
+		/***********************
+		 **Insert white panels**
+		 ***********************/
+		
+			this.add(white);
+			this.add(white1);
+			this.add(white2);
+			this.add(white3);
+			this.add(white4);
+			this.add(white5);
+			this.add(white6);
+			this.add(white7);
+			this.add(white8);
+			this.add(white9);
+			this.add(white10);
+			this.add(white11);
+		
+		JButton play = new JButton("",Play);
+		//JButton stop = new JButton("",Stop);
+		play.setLocation(40, 400);
+		play.setLocation(5,5);
+		panel.add(play);
+		//panel.add(stop);
+		add(panel);
+		pack();
 		
 		/********************
 		 **JPanel for notes**
@@ -79,7 +194,7 @@ public class Composer extends JFrame{
 		JPanel noteA = new JPanel();
 		JPanel noteAA = new JPanel();
 		JPanel noteB = new JPanel();
-		//panel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		
 		/*********************************
 		 **set background color to white** 
 		 *********************************/
@@ -208,16 +323,16 @@ public class Composer extends JFrame{
 		/*********
 		 **icons**
 		 *********/
-		
+		/*
 		ImageIcon Play = new ImageIcon("Resources/playbut.jpg");
 		ImageIcon Stop = new ImageIcon("Resources/stopbut.jpg");
-		
+		*/
 		
 		/**************************
 		 **Play/stop icon buttons**
 		 **************************/
-		
-		/*JButton play = new JButton("",Play);
+	/*	
+		JButton play = new JButton("",Play);
 		JButton stop = new JButton("",Stop);
 		play.setLocation(40, 400);
 		play.setLocation(5,5);

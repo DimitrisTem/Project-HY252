@@ -1,8 +1,14 @@
 package gui;
 
-import java.awt.*;
-
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class MusicPlayer extends JFrame {
 	
@@ -54,20 +60,45 @@ public class MusicPlayer extends JFrame {
 		setJMenuBar(menubar);
 		
 		
+
+        /**********
+		 **JPanel**
+		 **********/
+        JPanel Play = new JPanel();
+        JPanel Pause = new JPanel();
+        JPanel Stop = new JPanel();
+        JPanel Forward = new JPanel();
+        JPanel Backward = new JPanel();
+        
+        /****************
+         **Icons/Labels**
+         ****************/
+        ImageIcon play = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/play.jpg");
+        JLabel PLAY = new JLabel(play);
+        Play.add(PLAY);
+        
+        ImageIcon pause = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/pause.jpg");
+        JLabel PAUSE = new JLabel(pause);
+        Pause.add(PAUSE);
+        
+        ImageIcon stop = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stop.jpg");
+        JLabel STOP = new JLabel(stop);
+        Stop.add(STOP);
+        
+        ImageIcon forward = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/front.jpg");
+        JLabel FORWARD = new JLabel(forward);
+        Forward.add(FORWARD);
+        
+        ImageIcon backward = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/back.jpg");
+        JLabel BACKWARD = new JLabel(backward);
+        Backward.add(BACKWARD);
+        
+        
+        
 		/*************************
 		 **Grid layout configure**
 		 *************************/
-		Container contentPane = getContentPane();
-		GridBagLayout gridbag = new GridBagLayout();
-        GridBagConstraints c = new GridBagConstraints();
-        contentPane.setLayout(gridbag);
-        c.fill = GridBagConstraints.HORIZONTAL; 
-		/**********
-		 **JPanel**
-		 **********/
-        
-        
-		
+	
 	}
 	
 	private void setLookAndFeel(){
@@ -81,10 +112,12 @@ public class MusicPlayer extends JFrame {
 		}
 	}
 	
-	public static void main(String[] args){
-		MusicPlayer player = new MusicPlayer();
-		player.setBounds(100,50,800,300);
-	}
+	public static void main(String[] a) {
+	    
+		MusicPlayer mp = new MusicPlayer();
+		mp.setBounds(50,100,800,200);
+	    
+	  }
 	
 	
 

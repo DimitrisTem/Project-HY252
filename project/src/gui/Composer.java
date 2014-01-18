@@ -1,11 +1,18 @@
 package gui;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
 
-import javax.swing.*;
-
-import java.awt.event.*;
-
-import javax.swing.plaf.metal.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class Composer extends JFrame{
 	public Composer(){
@@ -194,6 +201,8 @@ public class Composer extends JFrame{
 		JPanel noteA = new JPanel();
 		JPanel noteAA = new JPanel();
 		JPanel noteB = new JPanel();
+		
+		
 		
 		/*********************************
 		 **set background color to white** 

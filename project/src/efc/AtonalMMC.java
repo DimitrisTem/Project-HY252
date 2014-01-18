@@ -1,7 +1,7 @@
 package efc;
 
-import MMC.AtonalComposition;
 import interfaces.MemoryControl;
+import MMC.AtonalComposition;
 
 public class AtonalMMC extends MMC implements MemoryControl{
 	private AtonalComposition Atonal;

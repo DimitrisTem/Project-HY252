@@ -6,6 +6,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Insets;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,8 +19,10 @@ import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.border.BevelBorder;
 
 public class MusicPlayer extends JFrame {
 	public static Color col = new Color(39,93,153);
@@ -148,6 +151,8 @@ public class MusicPlayer extends JFrame {
         JLabel trackno = new JLabel("Track No");
         JLabel title = new JLabel("Title");
         JLabel duration = new JLabel("Duration");
+       
+        
         /********
          **JTab**
          ********/
@@ -177,11 +182,10 @@ public class MusicPlayer extends JFrame {
         
         size = duration.getPreferredSize();
         duration.setBounds(350, 0, size.width, size.height);
-        Default.add(duration);
-
-        size = statusbar.getPreferredSize();
-        statusbar.setBounds(0, 160, 800, 20);
-        pane.add(statusbar);
+        Default.add(duration);       
+        
+       
+        
 	}
 
        
@@ -231,13 +235,7 @@ public class MusicPlayer extends JFrame {
 			
 			frame.setJMenuBar(menubar);
 	        //Set up the content pane.
-			  
-	      
-	        
-	        
-	       
-	        
-	        
+		 
 	        addComponentsToPane(frame.getContentPane());
 	        frame.pack();
 	        //Size and display the window.
@@ -260,7 +258,7 @@ public class MusicPlayer extends JFrame {
 	}
 	
 	public static void main(String[] a) {
-	    
+		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();

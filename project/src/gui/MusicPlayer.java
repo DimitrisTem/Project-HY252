@@ -26,9 +26,22 @@ import javax.swing.border.BevelBorder;
 
 public class MusicPlayer extends JFrame {
 	public static Color col = new Color(39,93,153);
+	static JPanel Play;
+	static JPanel Pause;
+	static JPanel Stop;
+	static JPanel Forward;
+	static JPanel Backward;
 	
- 
-	
+	static JMenuItem j1;
+	static JMenuItem j2;
+	static JMenuItem j3;
+	static JMenuItem j4;
+	static JMenuItem j5;
+	static JMenuItem j6;
+	static JMenuItem j7;
+	static JMenuItem j8;
+	static JMenuItem j9;
+
 	public static void addComponentsToPane(Container pane){
 		pane.setLayout(null);
 		pane.setBackground(col);
@@ -36,34 +49,22 @@ public class MusicPlayer extends JFrame {
 		/***************		 
 		 **Make panels**
 		 ***************/
-		JPanel Play = new JPanel();
-        JPanel Pause = new JPanel();
-        JPanel Stop = new JPanel();
-        JPanel Forward = new JPanel();
-        JPanel Backward = new JPanel();
+		 Play = new JPanel();
+		 Play.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/play.jpg")));
+		 
+		 Pause = new JPanel();
+		 Pause.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/pause.jpg")));
         
-        /**************************
-         **Adding icons to panels**
-         **************************/
-        ImageIcon play = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/play.jpg");
-        JLabel PLAY = new JLabel(play);
-        Play.add(PLAY);
+		 Stop = new JPanel();
+		 Stop.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stop.jpg")));
+         
+		 Forward = new JPanel();
+		 Forward.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/front.jpg")));
+         
+		 Backward = new JPanel();
+		 Backward.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/backa.jpg")));
         
-        ImageIcon pause = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/pause.jpg");
-        JLabel PAUSE = new JLabel(pause);
-        Pause.add(PAUSE);
-        
-        ImageIcon stop = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stop.jpg");
-        JLabel STOP = new JLabel(stop);
-        Stop.add(STOP);
-        
-        ImageIcon forward = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/front.jpg");
-        JLabel FORWARD = new JLabel(forward);
-        Forward.add(FORWARD);
-        
-        ImageIcon backward = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/backa.jpg");
-        JLabel BACKWARD = new JLabel(backward);
-        Backward.add(BACKWARD);
+       
        
         /****************************
          **Setting background color**
@@ -202,17 +203,17 @@ public class MusicPlayer extends JFrame {
 	         **********************************/
 	        
 	        JMenuBar menubar = new JMenuBar();
-			JMenuItem j1 = new JMenuItem("New");
-			JMenuItem j2 = new JMenuItem("Add File");
-			JMenuItem j3 = new JMenuItem("Add Folder");
-			JMenuItem j4 = new JMenuItem("Open");
-			JMenuItem j5 = new JMenuItem("Save");
+			j1 = new JMenuItem("New");
+			j2 = new JMenuItem("Add File");
+			j3 = new JMenuItem("Add Folder");
+			j4 = new JMenuItem("Open");
+		    j5 = new JMenuItem("Save");
 			
-			JMenuItem j6 = new JMenuItem("Normal");
-			JMenuItem j7 = new JMenuItem("Random");
-			JMenuItem j8 = new JMenuItem("Repeat");
+			j6 = new JMenuItem("Normal");
+			j7 = new JMenuItem("Random");
+			j8 = new JMenuItem("Repeat");
 			
-			JMenuItem j9 = new JMenuItem("About");
+			j9 = new JMenuItem("About");
 			
 			
 			JMenu menu = new JMenu("Collection");

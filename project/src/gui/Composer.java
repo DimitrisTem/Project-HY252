@@ -1,147 +1,143 @@
 package gui;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Insets;
-
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 public class Composer extends JFrame{
 	public static Color col =new Color(255,255,255);
+	public static Color colo =new Color(153,217,234);
 	public static String tmp;
+	
+	
+	/***************		 
+	 **Make panels**
+	 ***************/
+	 static JPanel noteC;
+	 static JPanel noteCC;
+	 static JPanel noteD;
+	 static JPanel noteDD;
+	 static JPanel noteE;
+	 static JPanel noteF;
+	 static JPanel noteFF;
+	 static JPanel noteG;
+	 static JPanel noteGG;
+	 static JPanel noteA;
+	 static JPanel noteAA;
+	 static JPanel noteB;
+
+	 static JPanel play;
+	 static JPanel stop;
+	
+	 static JPanel dono;
+	 static JPanel retro;
+	 static JPanel trans;
+	 static JPanel refle;
+	
+	 static JPanel reset;
+	
+	 
+	 /**************
+	  **JMenu item**
+	  **************/
+	 static JMenuItem j1;
+	 static JMenu j2; 
+	 static JMenuItem j3;
+	 static JMenuItem j4;
+	 static JMenuItem j5;
+	 static JMenuItem j6;
+	 static JMenuItem j7;
+	 static JMenuItem j8;
+	 static JMenuItem j9;
+	 static JMenuItem j10;
+	 static JMenuItem j11; 
+	 static JMenuItem j12;
+	 static JMenuItem j13;
+	 static JMenuItem j14;
+	 static JMenuItem j15;
+	 
+	 
 	public static void addComponentsToPane(Container pane){
 		pane.setLayout(null);
 		
 		pane.setBackground(col);
 		
-		/***************		 
-		 **Make panels**
-		 ***************/
-		JPanel noteC = new JPanel();
-		JPanel noteCC = new JPanel();
-		JPanel noteD = new JPanel();
-		JPanel noteDD = new JPanel();
-		JPanel noteE = new JPanel();
-		JPanel noteF = new JPanel();
-		JPanel noteFF = new JPanel();
-		JPanel noteG = new JPanel();
-		JPanel noteGG = new JPanel();
-		JPanel noteA = new JPanel();
-		JPanel noteAA = new JPanel();
-		JPanel noteB = new JPanel();
-	
-		JPanel play = new JPanel();
+		/*************
+		 **new Panel**
+		 *************/
+		noteC = new JPanel();
+		noteC.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC.jpg")));
+		
+		noteCC = new JPanel();
+		noteCC.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#.jpg")));
+		
+		noteD = new JPanel();
+		noteD.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD.jpg")));
+		
+		noteDD = new JPanel();
+		noteDD.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#.jpg")));
+		
+		noteE = new JPanel();
+		noteE.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteE.jpg")));
+		
+		noteF = new JPanel();
+		noteF.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF.jpg")));
+		
+		noteFF = new JPanel();
+		noteFF.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#.jpg")));
+		
+		noteG = new JPanel();
+		noteG.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG.jpg")));
+		
+		noteGG = new JPanel();
+		noteGG.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#.jpg")));
+		
+		noteA = new JPanel();
+		noteA.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg")));
+		
+		noteAA = new JPanel();
+		noteAA.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#.jpg"))); 	
+		
+		noteB = new JPanel();
+		noteB.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteB.jpg")));
 		
 		
-		JPanel dono = new JPanel();
-		JPanel retro = new JPanel();
-		JPanel trans = new JPanel();
-		JPanel refle = new JPanel();
 		
-		/***********
-		 **JButton**
-		 ***********/
+		play = new JPanel();
+		play.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/playblack.jpg")));
 		
-		JPanel reset = new JPanel();
+		stop = new JPanel();
+		stop.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stopblack.jpg")));
+		
+		dono = new JPanel();
+		dono.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/Donothing.jpg")));
+		
+		retro = new JPanel();
+		retro.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ret.jpg")));
+		
+		trans = new JPanel();
+		trans.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/trans.jpg")));
+		
+		refle = new JPanel();
+		refle.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ref.jpg")));
+		
+		reset = new JPanel();
 		reset.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/reset.jpg")));
 		
-		/**************************
-         **Adding icons to panels**
-         **************************/
 		
-		ImageIcon iconc = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC.jpg");
-		JLabel labelNotec = new JLabel(iconc);
-		
-		ImageIcon iconcc = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#.jpg");
-		JLabel labelNotecc = new JLabel(iconcc);
-		
-		ImageIcon icond = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD.jpg");
-		JLabel labelNoted = new JLabel(icond);
-		
-		ImageIcon icondd = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#.jpg");
-		JLabel labelNotedd = new JLabel(icondd);
-		
-		ImageIcon icone = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteE.jpg");
-		JLabel labelNotee = new JLabel(icone);
-		
-		ImageIcon iconf = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF.jpg");
-		JLabel labelNotef = new JLabel(iconf);
-		
-		ImageIcon iconff = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#.jpg");
-		JLabel labelNoteff = new JLabel(iconff);
-		
-		ImageIcon icong = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG.jpg");
-		JLabel labelNoteg = new JLabel(icong);
-		
-		ImageIcon icongg = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#.jpg");
-		JLabel labelNotegg = new JLabel(icongg);
-		
-		ImageIcon icona = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg");
-		JLabel labelNotea = new JLabel(icona);
-		
-		ImageIcon iconaa = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#.jpg");
-		JLabel labelNoteaa = new JLabel(iconaa);
-		
-		ImageIcon iconb = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteB.jpg");
-		JLabel labelNoteb = new JLabel(iconb);
-		
-		
-		ImageIcon playblack = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/playblack.jpg");
-		JLabel labelplay = new JLabel(playblack);
-		
-		ImageIcon don = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/Donothing.jpg");
-		JLabel labeldon = new JLabel(don);
-		
-		ImageIcon Rt = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ret.jpg");
-		JLabel labelret = new JLabel(Rt);
-		
-		ImageIcon tran = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/trans.jpg");
-		JLabel labeltran = new JLabel(tran);
-		
-		ImageIcon ref = new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ref.jpg");
-		JLabel labelref = new JLabel(ref);
-		/******************************
-		 **insert icon label to notes**
-		 ******************************/
-		
-		noteC.add(labelNotec);
-	    noteCC.add(labelNotecc);
-		noteD.add(labelNoted);
-		noteDD.add(labelNotedd);
-		noteE.add(labelNotee);
-		noteF.add(labelNotef);
-		noteFF.add(labelNoteff);
-		noteG.add(labelNoteg);
-		noteGG.add(labelNotegg);
-		noteA.add(labelNotea);
-		noteAA.add(labelNoteaa);
-		noteB.add(labelNoteb);
-		
-		play.add(labelplay);
-		
-		dono.add(labeldon);
-		retro.add(labelret);
-		trans.add(labeltran);
-		refle.add(labelref);
-		/************************
-		 **Adding jPanel/button to pane**
-		 ************************/
+		/*************************
+		 **Adding JPanel to pane**
+		 *************************/
 		
 		pane.add(noteC);
 		pane.add(noteCC);
@@ -168,7 +164,7 @@ public class Composer extends JFrame{
         **Place panel at correct position**
         ***********************************/
        
-		Insets insets = pane.getInsets();
+	
 		
 		
 		Dimension size = noteC.getPreferredSize();
@@ -259,7 +255,7 @@ public class Composer extends JFrame{
 		size = text.getPreferredSize();
 		text.setEditable(false);
 		text.setBounds(0, 360, 900, 145);
-		text.setBackground(Color.orange);
+		text.setBackground(colo);
 		
 		
 	}
@@ -272,25 +268,38 @@ public class Composer extends JFrame{
 		 /******************
 		 	**MENU OPTIONS**
 		 *******************/
-		JMenuItem j1 = new JMenuItem("Open");
-		JMenuItem j2 = new JMenuItem("New");
-		JMenuItem j3 = new JMenuItem("Save");
-		JMenuItem j4 = new JMenuItem("Save As");
-		JMenuItem j5 = new JMenuItem("Export");
-		JMenuItem j6 = new JMenuItem("Quit");
-		JMenuItem j7 = new JMenuItem("Piano");
-		JMenuItem j8 = new JMenuItem("Guitar");
-		JMenuItem j9 = new JMenuItem("Flute");
-		JMenuItem j10 = new JMenuItem("Other");
-		JMenuItem j11 = new JMenuItem("About");
+		j1 = new JMenuItem("Open");
+		
+		j3 = new JMenuItem("Save");
+		j4 = new JMenuItem("Save As");
+		j5 = new JMenuItem("Export");
+		j6 = new JMenuItem("Quit");
+		j7 = new JMenuItem("Piano");
+		j8 = new JMenuItem("Guitar");
+		j9 = new JMenuItem("Flute");
+		j10 = new JMenuItem("Other");
+		j11 = new JMenuItem("About");
+		j12 = new JMenuItem("Clear");
+		j13 = new JMenuItem("Free");
+		j14 = new JMenuItem("Atonal");
+		j15 = new JMenuItem("Algorithmic");
+		
 		JMenuBar menubar = new JMenuBar();
 		
+		
+		j2 = new JMenu("New");
+		j2.add(j13);
+		j2.add(j14);
+		j2.add(j15);
 		JMenu menu = new JMenu("Composition");
 		menu.add(j1);
 		menu.add(j2);
+		menu.add(j12);
+		menu.addSeparator();
 		menu.add(j3);
 		menu.add(j4);
 		menu.add(j5);
+		menu.addSeparator();
 		menu.add(j6);
 		menubar.add(menu);
 		
@@ -298,6 +307,7 @@ public class Composer extends JFrame{
 		menu2.add(j7);
 		menu2.add(j8);
 		menu2.add(j9);
+		menu2.addSeparator();
 		menu2.add(j10);
 		menubar.add(menu2);
 		
@@ -314,16 +324,6 @@ public class Composer extends JFrame{
 	        frame.setVisible(true);
 	}
 	
-	private void setLookAndFeel(){
-		try{
-		UIManager.setLookAndFeel(
-				"com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
-				);
-				SwingUtilities.updateComponentTreeUI(this);
-		}catch(Exception e){
-			System.err.println("Couldn't use the system" + "look and feel: " + e);
-		}
-	}
 	
 	public static void main(String[] args){
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {

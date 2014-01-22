@@ -7,6 +7,7 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Sequencer;
 
+import org.jfugue.Pattern;
 import org.jfugue.Player;
 
 public class test {
@@ -17,5 +18,6 @@ public class test {
 		
 		Player playerw = new Player();
 		playerw.play("A C A B");
+		
 	}
 }

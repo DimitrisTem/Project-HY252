@@ -9,7 +9,6 @@ import javax.sound.midi.Sequencer;
 
 public interface Playable {
 	
-	void Play(Sequencer sequencer,String file) throws InvalidMidiDataException, IOException, MidiUnavailableException;
-	void Play() throws InvalidMidiDataException, IOException, MidiUnavailableException;
+	void Play(Sequencer sequencer,String file) throws InvalidMidiDataException, IOException, MidiUnavailableException, InterruptedException;
 	void Stop(Sequencer sequencer) throws InvalidMidiDataException, IOException, MidiUnavailableException;
 }

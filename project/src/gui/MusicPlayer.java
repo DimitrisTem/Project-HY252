@@ -1,12 +1,11 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Insets;
-
-import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,19 +17,28 @@ import javax.swing.JProgressBar;
 import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.border.BevelBorder;
 
 public class MusicPlayer extends JFrame {
 	public static Color col = new Color(39,93,153);
+	static JFrame frame;
+	static String Title;
 	static JPanel Play;
 	static JPanel Pause;
 	static JPanel Stop;
 	static JPanel Forward;
 	static JPanel Backward;
+	
+	static JLabel playing;
+	static JLabel artist;
+	static JLabel trackno;
+	static JLabel title;
+	static JLabel duration;
+	
+    static JSlider vol;
+	
+	static JTabbedPane tab;
+	
+	static  JTextArea text;
 	
 	static JMenuItem j1;
 	static JMenuItem j2;
@@ -42,6 +50,25 @@ public class MusicPlayer extends JFrame {
 	static JMenuItem j8;
 	static JMenuItem j9;
 
+	public void addmenuListeners(ActionListener actionListener){
+		j1.addActionListener(actionListener);		
+		j3.addActionListener(actionListener);
+		j4.addActionListener(actionListener);
+		j5.addActionListener(actionListener);
+		j6.addActionListener(actionListener);
+		j7.addActionListener(actionListener);
+		j8.addActionListener(actionListener);
+		j9.addActionListener(actionListener);
+	}
+
+	
+	public void addmouseListeners(MouseListener mouseListener){
+		Play.addMouseListener(mouseListener);
+		Stop.addMouseListener(mouseListener);
+		Forward.addMouseListener(mouseListener);
+		Backward.addMouseListener(mouseListener);
+	}
+	
 	public static void addComponentsToPane(Container pane){
 		pane.setLayout(null);
 		pane.setBackground(col);
@@ -122,7 +149,7 @@ public class MusicPlayer extends JFrame {
         /*********************
          **Volume controller**
          ********************/
-        JSlider vol = new JSlider(JSlider.HORIZONTAL,0,100,50);
+        vol = new JSlider(JSlider.HORIZONTAL,0,100,50);
         vol.setMajorTickSpacing(20);
         vol.setMinorTickSpacing(5);
       
@@ -136,7 +163,7 @@ public class MusicPlayer extends JFrame {
         /***************
          **JText field**
          ***************/
-        JTextArea text = new JTextArea();
+        text = new JTextArea();
         JPanel Default = new JPanel();
         Default.setLayout(null);
         Default.setBackground(Color.white);
@@ -147,19 +174,19 @@ public class MusicPlayer extends JFrame {
         /********************
          **JLabel for JText**
          ********************/
-        JLabel playing = new JLabel("Playing");
-        JLabel artist = new JLabel("Artist/Album");
-        JLabel trackno = new JLabel("Track No");
-        JLabel title = new JLabel("Title");
-        JLabel duration = new JLabel("Duration");
+        playing = new JLabel("Playing");
+        artist = new JLabel("Artist/Album");
+        trackno = new JLabel("Track No");
+        title = new JLabel("Title");
+        duration = new JLabel("Duration");
        
         
         /********
          **JTab**
          ********/
         
-        JTabbedPane tab = new JTabbedPane();
-        tab.add("Default",Default);
+        tab = new JTabbedPane();
+        tab.add(Title,Default);
         pane.add(tab);
         size = tab.getPreferredSize();
         tab.setBounds(0, 38, 800, 125);
@@ -167,7 +194,6 @@ public class MusicPlayer extends JFrame {
         size = playing.getPreferredSize();
         playing.setBounds(0, 0, size.width, size.height);
         Default.add(playing);
-        
         size = artist.getPreferredSize();
         artist.setBounds(50, 0, size.width, size.height);
         Default.add(artist);
@@ -191,12 +217,12 @@ public class MusicPlayer extends JFrame {
 
        
 	private static void createAndShowGUI(){
-		 JFrame frame = new JFrame("Music Collection Player");
+		 	frame = new JFrame("Music Collection Player");
 		 	
 		  
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	     
-	        //Display the window.
+	        
 	        
 	        /**********************************
 	         **Add and fill a menu bar[JMenu]**
@@ -235,28 +261,18 @@ public class MusicPlayer extends JFrame {
 			menubar.add(menu3);
 			
 			frame.setJMenuBar(menubar);
-	        //Set up the content pane.
+	       
 		 
 	        addComponentsToPane(frame.getContentPane());
 	        frame.pack();
-	        //Size and display the window.
+	        
 	        Insets insets = frame.getInsets();
-	        frame.setSize(800 + insets.left + insets.right,203 + insets.top + insets.bottom);
+	        frame.setBounds(100,150,800 + insets.left + insets.right,203 + insets.top + insets.bottom);
 	        frame.setVisible(true);
+	        frame.setResizable(false);
 	       
 	    }
 	
-	
-	private void setLookAndFeel(){
-		try{
-		UIManager.setLookAndFeel(
-				"com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
-				);
-				SwingUtilities.updateComponentTreeUI(this);
-		}catch(Exception e){
-			System.err.println("Couldn't use the system" + "look and feel: " + e);
-		}
-	}
 	
 	public static void main(String[] a) {
 		

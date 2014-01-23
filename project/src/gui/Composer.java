@@ -3,6 +3,9 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,8 +20,23 @@ import javax.swing.UIManager;
 public class Composer extends JFrame{
 	public static Color col =new Color(255,255,255);
 	public static Color colo =new Color(153,217,234);
-	public static String tmp;
+	public static String tmp ;
+	static JFrame frame;
+
 	
+	public static void addtxt(String toString){
+		
+		JTextArea text = new JTextArea(toString);
+		
+		text.setLayout(null);
+		frame.getContentPane().add(text);
+		
+		
+		text.setEditable(false);
+		text.setBounds(0, 360, 900, 145);
+		text.setBackground(colo);
+		
+	}
 	
 	/***************		 
 	 **Make panels**
@@ -36,6 +54,21 @@ public class Composer extends JFrame{
 	 static JPanel noteAA;
 	 static JPanel noteB;
 
+	 
+	 static JPanel noteCg;
+	 static JPanel noteCCg;
+	 static JPanel noteDg;
+	 static JPanel noteDDg;
+	 static JPanel noteEg;
+	 static JPanel noteFg;
+	 static JPanel noteFFg;
+	 static JPanel noteGg;
+	 static JPanel noteGGg;
+	 static JPanel noteAg;
+	 static JPanel noteAAg;
+	 static JPanel noteBg;
+	 
+	 
 	 static JPanel play;
 	 static JPanel stop;
 	
@@ -65,6 +98,49 @@ public class Composer extends JFrame{
 	 static JMenuItem j13;
 	 static JMenuItem j14;
 	 static JMenuItem j15;
+	 
+	 /*******************
+	  **ActionListeners**
+	  *******************/
+	 public void addmenuListeners(ActionListener actionListener){
+			j1.addActionListener(actionListener);		
+			j3.addActionListener(actionListener);
+			j4.addActionListener(actionListener);
+			j5.addActionListener(actionListener);
+			j6.addActionListener(actionListener);
+			j7.addActionListener(actionListener);
+			j8.addActionListener(actionListener);
+			j9.addActionListener(actionListener);
+			j10.addActionListener(actionListener);
+			j11.addActionListener(actionListener);
+			j12.addActionListener(actionListener);
+			j13.addActionListener(actionListener);
+			j14.addActionListener(actionListener);
+			j15.addActionListener(actionListener);
+			
+		}
+
+		/******************
+		 **MouseListeners**
+		 ******************/
+		
+		public void addmouseListeners(MouseListener mouseListener){
+			noteC.addMouseListener(mouseListener);
+			noteCC.addMouseListener(mouseListener);
+			noteD.addMouseListener(mouseListener);
+			noteDD.addMouseListener(mouseListener);
+			noteE.addMouseListener(mouseListener);
+			noteF.addMouseListener(mouseListener);
+			noteFF.addMouseListener(mouseListener);
+			noteG.addMouseListener(mouseListener);
+			noteGG.addMouseListener(mouseListener);
+			noteA.addMouseListener(mouseListener);
+			noteAA.addMouseListener(mouseListener);
+			noteB.addMouseListener(mouseListener);		
+			play.addMouseListener(mouseListener);
+			stop.addMouseListener(mouseListener);
+			
+		}
 	 
 	 
 	public static void addComponentsToPane(Container pane){
@@ -111,6 +187,41 @@ public class Composer extends JFrame{
 		noteB = new JPanel();
 		noteB.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteB.jpg")));
 		
+		noteCg = new JPanel();
+		noteCg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteCg.jpg")));
+		
+		noteCCg = new JPanel();
+		noteCCg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#g.jpg")));
+		
+		noteDg = new JPanel();
+		noteDg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteDg.jpg")));
+		
+		noteDDg = new JPanel();
+		noteDDg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#g.jpg")));
+		
+		noteEg = new JPanel();
+		noteEg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteEg.jpg")));
+		
+		noteFg = new JPanel();
+		noteFg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteFg.jpg")));
+		
+		noteFFg = new JPanel();
+		noteFFg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#g.jpg")));
+		
+		noteGg = new JPanel();
+		noteGg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteGg.jpg")));
+		
+		noteGGg = new JPanel();
+		noteGGg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#g.jpg")));
+		
+		noteAg = new JPanel();
+		noteAg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteAg.jpg")));
+		
+		noteAAg = new JPanel();
+		noteAAg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#g.jpg"))); 	
+		
+		noteBg = new JPanel();
+		noteBg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteBg.jpg")));
 		
 		
 		play = new JPanel();
@@ -152,8 +263,21 @@ public class Composer extends JFrame{
 		pane.add(noteAA);
 		pane.add(noteB);
 		
-		pane.add(play);
+		pane.add(noteCg);
+		pane.add(noteCCg);
+		pane.add(noteDg);
+		pane.add(noteDDg);
+		pane.add(noteEg);
+		pane.add(noteFg);
+		pane.add(noteFFg);
+		pane.add(noteGg);
+		pane.add(noteGGg);
+		pane.add(noteAg);
+		pane.add(noteAAg);
+		pane.add(noteBg);
 		
+		pane.add(play);
+		pane.add(stop);
 		pane.add(dono);
 		pane.add(retro);
 		pane.add(trans);
@@ -201,9 +325,49 @@ public class Composer extends JFrame{
 		
 		size = noteAA.getPreferredSize();
 		noteAA.setBounds(728,92,size.width,size.height);
+		
+		size = noteCg.getPreferredSize();
+		noteCg.setBounds(100, 45,size.width, size.height);
+		
+		
+		size = noteCCg.getPreferredSize();
+		noteCCg.setBounds(179,50,size.width,size.height);
+		
+		
+		size = noteDg.getPreferredSize();
+		noteDg.setBounds(255,55,size.width,size.height);
+		
+		size = noteDDg.getPreferredSize();
+		noteDDg.setBounds(324,60,size.width,size.height);
+		
+		size = noteEg.getPreferredSize();
+		noteEg.setBounds(393,65,size.width,size.height);
+		
+		size = noteFg.getPreferredSize();
+		noteFg.setBounds(458,70,size.width,size.height);
+		
+		size = noteFFg.getPreferredSize();
+		noteFFg.setBounds(520,75,size.width,size.height);
+		
+		size = noteGg.getPreferredSize();
+		noteGg.setBounds(578,82,size.width,size.height);
+		
+		size = noteGGg.getPreferredSize();
+		noteGGg.setBounds(632,85,size.width,size.height);
+		
+		size = noteAg.getPreferredSize();
+		noteAg.setBounds(682,89,size.width,size.height);
+		
+		size = noteAAg.getPreferredSize();
+		noteAAg.setBounds(728,92,size.width,size.height);
 ////////////////////////////////////////////////////////////////////////////
 		size = play.getPreferredSize();
 		play.setBounds(820, 0, size.width, size.height);
+		
+		size = stop.getPreferredSize();
+		stop.setBounds(820, 0, size.width, size.height);
+		
+		
 ////////////////////////////////////////////////////////////////////////////		
 		size = dono.getPreferredSize();
 		dono.setBounds(110, 320, size.width, size.height);
@@ -236,6 +400,7 @@ public class Composer extends JFrame{
 		noteB.setBackground(col);
 ////////////////////////////////////////////////////////////////////////////		
 		play.setBackground(col);
+		stop.setBackground(col);
 ////////////////////////////////////////////////////////////////////////////		
 		dono.setBackground(col);
 		retro.setBackground(col);
@@ -243,25 +408,12 @@ public class Composer extends JFrame{
 		refle.setBackground(col);
 ////////////////////////////////////////////////////////////////////////////		
 		reset.setBackground(col);
-		/*********
-		 **JText**
-		 *********/
-		
-		JTextArea text = new JTextArea(tmp);
-		
-		text.setLayout(null);
-		pane.add(text);
-		
-		size = text.getPreferredSize();
-		text.setEditable(false);
-		text.setBounds(0, 360, 900, 145);
-		text.setBackground(colo);
 		
 		
 	}
 	
 	private static void createAndShowGUI(){
-		 JFrame frame = new JFrame("Composer");
+		 frame = new JFrame("Composer");
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
 		 
@@ -317,11 +469,12 @@ public class Composer extends JFrame{
 		
 		frame.setJMenuBar(menubar);
 		 addComponentsToPane(frame.getContentPane());
-	        frame.pack();
+	        //frame.pack();
 	        //Size and display the window.
 	        Insets insets = frame.getInsets();
 	        frame.setBounds(100,80,900 + insets.left + insets.right,530 + insets.top + insets.bottom);
 	        frame.setVisible(true);
+	       frame.setResizable(false);
 	}
 	
 	

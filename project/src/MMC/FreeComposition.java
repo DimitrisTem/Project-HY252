@@ -18,12 +18,20 @@ public class FreeComposition extends Composition {
 			String notes) {
 		super(compName, composer, instrument, notes);
 	}
-
-	
-	
 	@Override
-	void compose() {
-		//play to Music String se notes
+	public void addNotes(String note){
+		if(getNotes()==null){
+			setNotes(getInstrument()+note);
+		}
+		else
+			setNotes(getNotes()+" "+note);
 	}
+	
+	@Override public String compose() {
+		return getNotes();
+	}
+
+
+
 
 }

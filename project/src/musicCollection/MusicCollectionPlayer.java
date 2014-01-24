@@ -21,45 +21,76 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusicCollectionPlayer implements Playback,Playable {
+public class MusicCollectionPlayer implements Playback,Playable, Runnable {
 	private ArrayList<Collection> collection;
 	Sequencer sequencer; 
-	
-	MusicCollectionPlayer(String file) throws InvalidMidiDataException, IOException, MidiUnavailableException{
+	boolean run=true;
+	Sequence  sequence ;
+	public MusicCollectionPlayer(String file) throws InvalidMidiDataException, IOException, MidiUnavailableException{
 		this.collection= new ArrayList<Collection>();
 		sequencer=MidiSystem.getSequencer();
-		this.sequencer=sequencer;
+		this.sequencer = sequencer;
+		this.sequence = sequence;
 	 }
-	@Override
-	public void Play(Sequencer sequencer,String file) throws InvalidMidiDataException, IOException, MidiUnavailableException, InterruptedException {
 	
-		
-	    // Create a sequencer for the sequence
-	    sequencer = MidiSystem.getSequencer();
-	    sequencer.open();
-	    Sequence sequence = MidiSystem.getSequence(new File(file));
-	    sequencer.setSequence(sequence);
-
-	    // Start playing
-	    sequencer.start();
-	    while(true) {
+	void startThread(){
+    	if(!run){
+    			run=true;
+		}else{
+    		Thread th=new Thread(this);
+    		th.start();
+    		sequencer.close();
+    	}
+    	
+    }
+    
+    @Override
+    public void run(){   
+    	try {
+			sequencer.open();
+		} catch (MidiUnavailableException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        sequencer.start();
+        while(true) {
             if(sequencer.isRunning()) {
+            	run=true;
             	sequencer.start();
-            	Thread.sleep(1000);
+            	try {
+    				Thread.sleep(100000);
+    			} catch (InterruptedException e) {
+    				e.printStackTrace();
+    			}
             }
             else{ 
+            	run=true;
             	
-            	sequencer.stop();
             	sequencer.close();
-	            break;
-            }
-            
+                break;
+            }            
        }
+    }
+    
+    public void pause() throws InterruptedException{
+    	run=false;
+    	sequencer.stop();
+    	}
+    	
+    	
 	
+public void Play(String file) throws InvalidMidiDataException, IOException, MidiUnavailableException, InterruptedException {
+	 
+	sequencer = MidiSystem.getSequencer();
+    
+    sequence = MidiSystem.getSequence(new File(file));
+    sequencer.setSequence(sequence);
+    startThread();
+    
 	}
 	
 	@Override
-	public void Stop(Sequencer sequencer) {
+	public void Stop() {
 			sequencer.stop();
 			sequencer.close();
 	}
@@ -67,8 +98,10 @@ public class MusicCollectionPlayer implements Playback,Playable {
 	public void Repeat(ArrayList<String> songs) throws InvalidMidiDataException, IOException, MidiUnavailableException, InterruptedException {
 		while(true){
 			int i=0;
-			if(i==songs.size()-1) i=0;
-			else Play( sequencer, songs.get(i));
+			if(i==songs.size()) i=0;
+			else{
+				Play(songs.get(i)); i++;
+			}
 		}
 		// TODO Auto-generated method stub
 		

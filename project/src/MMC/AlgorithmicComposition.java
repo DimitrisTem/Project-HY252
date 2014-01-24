@@ -1,28 +1,48 @@
 package MMC;
-
 public class AlgorithmicComposition extends Composition {
-
-	public AlgorithmicComposition(String compName, String composer) {
+	
+	private int num;
+	private int size=1000;
+	public AlgorithmicComposition(String compName, String composer,int num) {
 		super(compName, composer);
-		// TODO Auto-generated constructor stub
+		this.num=num;
 	}
 
-	public AlgorithmicComposition(String compName, String composer,
-			String instrument) {
+	public AlgorithmicComposition(String compName, String composer,String instrument,int num) {
 		super(compName, composer, instrument);
-		// TODO Auto-generated constructor stub
+		this.num=num;;
 	}
 
-	public AlgorithmicComposition(String compName, String composer,
-			String instrument, String notes) {
-		super(compName, composer, instrument, notes);
-		// TODO Auto-generated constructor stub
+	
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	void randomMusic(){
+		for(int i=0;i<size;++i){
+			if(i==0)
+				setNotes(getInstrument()+"["+(System.nanoTime()/(i+num))%128+"] ");			
+			else
+				setNotes(getNotes()+"["+(System.nanoTime()/(i+num))%128+"] ");
+		}
+		
+	}
+	
+	
+	
+	@Override
+	public String compose() {
+		randomMusic();
+		return getNotes();
 	}
 
 	@Override
-	void compose() {
-		// TODO Auto-generated method stub
-
+	public void addNotes(String note) {
+		setNum(Integer.parseInt(note));
 	}
 
 }

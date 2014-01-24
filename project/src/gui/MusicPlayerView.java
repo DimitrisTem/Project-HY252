@@ -18,7 +18,10 @@ import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
-public class MusicPlayer extends JFrame {
+public class MusicPlayerView extends JFrame {
+	public MusicPlayerView(){
+		createAndShowGUI();
+	}
 	public static Color col = new Color(39,93,153);
 	static JFrame frame;
 	static String Title;
@@ -77,19 +80,19 @@ public class MusicPlayer extends JFrame {
 		 **Make panels**
 		 ***************/
 		 Play = new JPanel();
-		 Play.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/play.jpg")));
+		 Play.add(new JLabel(new ImageIcon("Resources/play.jpg")));
 		 
 		 Pause = new JPanel();
-		 Pause.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/pause.jpg")));
+		 Pause.add(new JLabel(new ImageIcon("Resources/pause.jpg")));
         
 		 Stop = new JPanel();
-		 Stop.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stop.jpg")));
+		 Stop.add(new JLabel(new ImageIcon("Resources/stop.jpg")));
          
 		 Forward = new JPanel();
-		 Forward.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/front.jpg")));
+		 Forward.add(new JLabel(new ImageIcon("Resources/front.jpg")));
          
 		 Backward = new JPanel();
-		 Backward.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/backa.jpg")));
+		 Backward.add(new JLabel(new ImageIcon("Resources/backa.jpg")));
         
        
        
@@ -250,7 +253,7 @@ public class MusicPlayer extends JFrame {
 			menu.add(j5);
 			menubar.add(menu);
 			
-			JMenu menu2 = new JMenu("Instrument");
+			JMenu menu2 = new JMenu("PlayList");
 			menu2.add(j6);
 			menu2.add(j7);
 			menu2.add(j8);

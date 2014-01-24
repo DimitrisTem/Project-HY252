@@ -3,29 +3,28 @@ package MMC;
 public abstract class Composition {
 	private String compName;
 	private String composer;
-	private String instrument;
+	private String instrument="I[Piano]";
 	private String notes;
 	
 	Composition(String compName,String composer){
 		this.setCompName(compName);
 		this.setComposer(composer);
-		this.setInstrument("default");
 	}
 	Composition(String compName,String composer,String instrument){
 		this.setCompName(compName);
 		this.setComposer(composer);
-		this.setInstrument(instrument);
+		this.instrument=instrument;
 	}
 	Composition(String compName,String composer,String instrument,String notes){
 		this.setCompName(compName);
 		this.setComposer(composer);
-		this.setInstrument(instrument);
-		this.setNotes(notes);
+		this.instrument=instrument;
+		this.notes=instrument+notes;
 	}
 	
 	
-	abstract void compose();
-	
+	public abstract String compose();
+	public abstract void addNotes(String note);
 	
 	public String getCompName() {
 		return compName;
@@ -44,12 +43,16 @@ public abstract class Composition {
 	}
 	public void setInstrument(String instrument) {
 		this.instrument = instrument;
+		setNotes(getNotes()+instrument);
 	}
-	public String getNotes() {
+	public String getNotes(){
 		return notes;
 	}
 	public void setNotes(String notes) {
-		this.notes = notes;
+		this.notes =notes;
+	}
+	public String Compose(String mode,int x) {
+		return null;	
 	}
 	
 	

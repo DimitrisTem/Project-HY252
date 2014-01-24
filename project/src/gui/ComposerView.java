@@ -13,21 +13,25 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-public class Composer extends JFrame{
+public class ComposerView extends JFrame{
 	public static Color col =new Color(255,255,255);
 	public static Color colo =new Color(153,217,234);
 	public static String tmp ;
 	static JFrame frame;
 
-	
+	public ComposerView(){
+		createAndShowGUI();
+		 
+	 }
 	public static void addtxt(String toString){
 		
 		JTextArea text = new JTextArea(toString);
-		
+		JScrollPane logScrollPane = new JScrollPane(text);
 		text.setLayout(null);
 		frame.getContentPane().add(text);
 		
@@ -152,98 +156,98 @@ public class Composer extends JFrame{
 		 **new Panel**
 		 *************/
 		noteC = new JPanel();
-		noteC.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC.jpg")));
+		noteC.add(new JLabel(new ImageIcon("Resources/noteC.jpg")));
 		
 		noteCC = new JPanel();
-		noteCC.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#.jpg")));
+		noteCC.add(new JLabel(new ImageIcon("Resources/noteC#.jpg")));
 		
 		noteD = new JPanel();
-		noteD.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD.jpg")));
+		noteD.add(new JLabel(new ImageIcon("Resources/noteD.jpg")));
 		
 		noteDD = new JPanel();
-		noteDD.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#.jpg")));
+		noteDD.add(new JLabel(new ImageIcon("Resources/noteD#.jpg")));
 		
 		noteE = new JPanel();
-		noteE.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteE.jpg")));
+		noteE.add(new JLabel(new ImageIcon("Resources/noteE.jpg")));
 		
 		noteF = new JPanel();
-		noteF.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF.jpg")));
+		noteF.add(new JLabel(new ImageIcon("Resources/noteF.jpg")));
 		
 		noteFF = new JPanel();
-		noteFF.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#.jpg")));
+		noteFF.add(new JLabel(new ImageIcon("Resources/noteF#.jpg")));
 		
 		noteG = new JPanel();
-		noteG.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG.jpg")));
+		noteG.add(new JLabel(new ImageIcon("Resources/noteG.jpg")));
 		
 		noteGG = new JPanel();
-		noteGG.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#.jpg")));
+		noteGG.add(new JLabel(new ImageIcon("Resources/noteG#.jpg")));
 		
 		noteA = new JPanel();
-		noteA.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA.jpg")));
+		noteA.add(new JLabel(new ImageIcon("Resources/noteA.jpg")));
 		
 		noteAA = new JPanel();
-		noteAA.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#.jpg"))); 	
+		noteAA.add(new JLabel(new ImageIcon("Resources/noteA#.jpg"))); 	
 		
 		noteB = new JPanel();
-		noteB.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteB.jpg")));
+		noteB.add(new JLabel(new ImageIcon("Resources/noteB.jpg")));
 		
 		noteCg = new JPanel();
-		noteCg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteCg.jpg")));
+		noteCg.add(new JLabel(new ImageIcon("Resources/noteCg.jpg")));
 		
 		noteCCg = new JPanel();
-		noteCCg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteC#g.jpg")));
+		noteCCg.add(new JLabel(new ImageIcon("Resources/noteC#g.jpg")));
 		
 		noteDg = new JPanel();
-		noteDg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteDg.jpg")));
+		noteDg.add(new JLabel(new ImageIcon("Resources/noteDg.jpg")));
 		
 		noteDDg = new JPanel();
-		noteDDg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteD#g.jpg")));
+		noteDDg.add(new JLabel(new ImageIcon("Resources/noteD#g.jpg")));
 		
 		noteEg = new JPanel();
-		noteEg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteEg.jpg")));
+		noteEg.add(new JLabel(new ImageIcon("Resources/noteEg.jpg")));
 		
 		noteFg = new JPanel();
-		noteFg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteFg.jpg")));
+		noteFg.add(new JLabel(new ImageIcon("Resources/noteFg.jpg")));
 		
 		noteFFg = new JPanel();
-		noteFFg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteF#g.jpg")));
+		noteFFg.add(new JLabel(new ImageIcon("Resources/noteF#g.jpg")));
 		
 		noteGg = new JPanel();
-		noteGg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteGg.jpg")));
+		noteGg.add(new JLabel(new ImageIcon("Resources/noteGg.jpg")));
 		
 		noteGGg = new JPanel();
-		noteGGg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteG#g.jpg")));
+		noteGGg.add(new JLabel(new ImageIcon("Resources/noteG#g.jpg")));
 		
 		noteAg = new JPanel();
-		noteAg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteAg.jpg")));
+		noteAg.add(new JLabel(new ImageIcon("Resources/noteAg.jpg")));
 		
 		noteAAg = new JPanel();
-		noteAAg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteA#g.jpg"))); 	
+		noteAAg.add(new JLabel(new ImageIcon("Resources/noteA#g.jpg"))); 	
 		
 		noteBg = new JPanel();
-		noteBg.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/noteBg.jpg")));
+		noteBg.add(new JLabel(new ImageIcon("Resources/noteBg.jpg")));
 		
 		
 		play = new JPanel();
-		play.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/playblack.jpg")));
+		play.add(new JLabel(new ImageIcon("Resources/playblack.jpg")));
 		
 		stop = new JPanel();
-		stop.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/stopblack.jpg")));
+		stop.add(new JLabel(new ImageIcon("Resources/stopblack.jpg")));
 		
 		dono = new JPanel();
-		dono.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/Donothing.jpg")));
+		dono.add(new JLabel(new ImageIcon("Resources/Donothing.jpg")));
 		
 		retro = new JPanel();
-		retro.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ret.jpg")));
+		retro.add(new JLabel(new ImageIcon("Resources/ret.jpg")));
 		
 		trans = new JPanel();
-		trans.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/trans.jpg")));
+		trans.add(new JLabel(new ImageIcon("Resources/trans.jpg")));
 		
 		refle = new JPanel();
-		refle.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/ref.jpg")));
+		refle.add(new JLabel(new ImageIcon("Resources/ref.jpg")));
 		
 		reset = new JPanel();
-		reset.add(new JLabel(new ImageIcon("C:/Users/Dimitris/Documents/GitHub/Project-HY252/project/Resources/reset.jpg")));
+		reset.add(new JLabel(new ImageIcon("Resources/reset.jpg")));
 		
 		
 		/*************************
@@ -326,6 +330,9 @@ public class Composer extends JFrame{
 		size = noteAA.getPreferredSize();
 		noteAA.setBounds(728,92,size.width,size.height);
 		
+		size = noteB.getPreferredSize();
+		noteB.setBounds(770,95,size.width,size.height);
+		
 		size = noteCg.getPreferredSize();
 		noteCg.setBounds(100, 45,size.width, size.height);
 		
@@ -360,6 +367,10 @@ public class Composer extends JFrame{
 		
 		size = noteAAg.getPreferredSize();
 		noteAAg.setBounds(728,92,size.width,size.height);
+		
+		size = noteBg.getPreferredSize();
+		noteBg.setBounds(770,95,size.width,size.height);
+		
 ////////////////////////////////////////////////////////////////////////////
 		size = play.getPreferredSize();
 		play.setBounds(820, 0, size.width, size.height);
@@ -398,6 +409,19 @@ public class Composer extends JFrame{
 		noteA.setBackground(col);
 		noteAA.setBackground(col);
 		noteB.setBackground(col);
+		
+		noteCg.setBackground(col);
+		noteCCg.setBackground(col);
+		noteDg.setBackground(col);
+		noteDDg.setBackground(col);
+		noteEg.setBackground(col);
+		noteFg.setBackground(col);
+		noteFFg.setBackground(col);
+		noteGg.setBackground(col);
+		noteGGg.setBackground(col);
+		noteAg.setBackground(col);
+		noteAAg.setBackground(col);
+		noteBg.setBackground(col);
 ////////////////////////////////////////////////////////////////////////////		
 		play.setBackground(col);
 		stop.setBackground(col);

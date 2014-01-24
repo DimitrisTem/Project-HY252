@@ -16,7 +16,7 @@ public class Popup extends JFrame{
 		while(name.equals("")){
 			name = JOptionPane.showInputDialog(null,"Enter Composition name");
 		}
-		composer = JOptionPane.showInputDialog(null,"Enter Composer name");
+		composer = JOptionPane.showInputDialog(null,"Enter ComposerView name");
 		while(composer.equals("")){
 			composer = JOptionPane.showInputDialog(null,"Enter Composition name");
 		}
@@ -39,7 +39,7 @@ public class Popup extends JFrame{
 	}
 	
 	public void quit(){
-		int exit = JOptionPane.showConfirmDialog(null, "Exit Composer?","Quit",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE);
+		int exit = JOptionPane.showConfirmDialog(null, "Exit ComposerView?","Quit",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public void notes(){
